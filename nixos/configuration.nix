@@ -111,6 +111,7 @@
     htop
     jq
     neovim
+    nil
     p7zip
     ripgrep
     unzip

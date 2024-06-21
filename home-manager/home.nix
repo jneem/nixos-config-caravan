@@ -11,6 +11,7 @@
   # You can import other home-manager modules here
   imports = [
     ./firefox.nix
+    ./helix.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
@@ -67,6 +68,7 @@
   };
 
   programs.fish.enable = true;
+  programs.lazygit.enable = true;
 
   # Nicely reload system units when changing configs
   #systemd.user.startServices = "sd-switch";
