@@ -40,23 +40,23 @@
               ];
             }];
             icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = [ "@pkg" ];
+            definedAliases = [ "/pkg" ];
           };
 
-          "Google".metaData.alias = "@g";
+          "Google".metaData.alias = "/g";
 
           "crates.io" = {
             urls = [{
               template = "https://crates.io/search?q={searchTerms}";
             }];
-            definedAliases = [ "@crate" ];
+            definedAliases = [ "/crate" ];
           };
 
           "docs.rs" = {
             urls = [{
               template = "https://docs.rs/releases/search?query={searchTerms}";
             }];
-            definedAliases = [ "@doc" ];
+            definedAliases = [ "/doc" ];
           };
         };
       };
