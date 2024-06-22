@@ -47,12 +47,31 @@
     sessionVariables = {
       EDITOR = "hx";
     };
+
+    pointerCursor = {
+      package = pkgs.inputs.curlossal.default;
+      name = "Curlossal";
+      size = 96;
+      gtk.enable = true;
+      x11.enable = true;
+    };
+
+    packages = with pkgs; [
+      bitwarden-cli
+      gimp
+      inkscape
+      krita
+      grim
+      slurp
+      slack
+      wl-clipboard
+      zathura
+    ];
   };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
   # home.packages = with pkgs; [ steam ];
-
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git = {
