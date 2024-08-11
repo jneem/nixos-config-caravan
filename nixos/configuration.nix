@@ -26,6 +26,9 @@
     ./hardware-configuration.nix
   ];
 
+  time.timeZone="Asia/Bangkok";
+  virtualisation.docker.enable = true;
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -42,6 +45,7 @@
 
   # Recent kernel fixed issues with power-off
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   nix = let
     flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
@@ -74,6 +78,12 @@
 
   networking.hostName = "caravan";
   networking.networkmanager.enable = true;
+  networking.firewall.allowedTCPPorts = [42000 42001];
+  networking.firewall.allowedUDPPorts = [42000 42001];
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+  };
 
   users.users = {
     jneeman = {
@@ -81,11 +91,19 @@
       isNormalUser = true;
       shell = pkgs.fish;
       extraGroups = [ "docker" "networkmanager" "wheel" "video" "scanner" "lp" "libvirtd" "dialout" "disk" "audio"];
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM3Hjr4Dv+5hKLBzAxO83oiNHA0ZmaG0/LINPVOKs9+4"
+      ];
     };
   };
 
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+  };
+  programs.sway.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

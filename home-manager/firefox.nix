@@ -15,6 +15,7 @@
         multi-account-containers
       ];
 
+      containersForce = true;
       containers = {
         work = {
           color = "orange";
@@ -30,6 +31,7 @@
 
       search = {
         default = "DuckDuckGo";
+        force = true;
         engines = {
           "Nix Packages" = {
             urls = [{

@@ -38,6 +38,13 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
+
+      packageOverrides = pkgs: {
+        factorio = pkgs.factorio.override {
+          username = "jneem";
+          token = "f23c7049ec63cf6f930b838a0f2f70";
+        };
+      };
     };
   };
 
@@ -58,16 +65,29 @@
 
     packages = with pkgs; [
       bitwarden-cli
+      chromium
+      digikam
+      eog
       gimp
       inkscape
       krita
+      factorio
+      gdb
+      gh
       grim
+      pavucontrol
       slurp
       slack
+      steam
+      vlc
+      wally-cli
       wl-clipboard
       zathura
     ];
   };
+
+  # This is needed for our cursor theme settings to take effect in gtk apps.
+  gtk.enable = true;
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
