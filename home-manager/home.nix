@@ -64,10 +64,12 @@
     };
 
     packages = with pkgs; [
+      age
       bitwarden-cli
       chromium
       digikam
       eog
+      exiftool
       gimp
       inkscape
       krita
@@ -75,7 +77,11 @@
       gdb
       gh
       grim
+      mpv
+      pari
       pavucontrol
+      picocom
+      rclone
       slurp
       slack
       steam

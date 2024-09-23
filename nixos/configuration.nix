@@ -104,6 +104,7 @@
     settings.PasswordAuthentication = false;
   };
   programs.sway.enable = true;
+  programs.geary.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
@@ -111,13 +112,16 @@
   i18n = {
     defaultLocale = "en_US.utf8";
     inputMethod = {
-      enabled = "fcitx5";
+      enable = true;
+      type = "fcitx5";
       fcitx5.addons = with pkgs; [ fcitx5-unikey fcitx5-gtk ];
     };
   };
 
   environment.systemPackages = with pkgs; [
     bat
+    cntr
+    darktable
     entr
     fd
     file
