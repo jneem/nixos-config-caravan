@@ -59,8 +59,13 @@
       caravan = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./nixos/zeus/configuration.nix
+        ];
+      };
+      purple = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/purple/configuration.nix
         ];
       };
     };
