@@ -49,6 +49,10 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
+  boot.kernel.sysctl = {
+    "kernel.dmesg_restrict" = 0;
+  };
+
   users.users = {
     jneeman = {
       initialPassword = "correcthorsebatterystaple";
