@@ -64,6 +64,7 @@
 
   environment.systemPackages = with pkgs; [
     bat
+    blender
     cntr
     darktable
     entr
@@ -78,6 +79,7 @@
     jq
     neovim
     nil
+    openscad
     p7zip
     ripgrep
     unzip
