@@ -53,6 +53,7 @@
     homeDirectory = "/home/jneeman";
     sessionVariables = {
       EDITOR = "hx";
+      UV_PYTHON_DOWNLOADS = "never";
     };
 
     pointerCursor = {
@@ -114,6 +115,14 @@
     ];
     extraConfig = {
       push.default = "upstream";
+    };
+  };
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user.name = "Joe Neeman";
+      user.email = "joe@neeman.me";
+      ui.default-command = "log";
     };
   };
   programs.nix-index = {

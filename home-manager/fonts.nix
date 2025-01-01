@@ -8,9 +8,9 @@
   home.packages = with pkgs; [
     dejavu_fonts
     inconsolata
-    inconsolata-nerdfont
+    nerd-fonts.inconsolata
     noto-fonts
-    noto-fonts-cjk
+    noto-fonts-cjk-sans
     noto-fonts-emoji
     noto-fonts-extra
     font-awesome

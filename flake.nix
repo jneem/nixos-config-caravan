@@ -15,7 +15,8 @@
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
     probe-rs-rules.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    #nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nixos-cosmic.url = "/home/jneeman/programming/nixos-cosmic";
     nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
 
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
