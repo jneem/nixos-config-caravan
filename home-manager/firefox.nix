@@ -22,11 +22,6 @@
           icon = "briefcase";
           id = 1;
         };
-        standard = {
-          color = "purple";
-          icon = "briefcase";
-          id = 2;
-        };
       };
 
       search = {

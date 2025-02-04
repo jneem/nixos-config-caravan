@@ -81,6 +81,7 @@
     neovim
     nil
     openscad
+    orca-slicer
     p7zip
     ripgrep
     unzip
