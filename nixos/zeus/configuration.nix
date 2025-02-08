@@ -90,7 +90,23 @@
     wget
     wl-clipboard
     xh
+
+    clinfo
+    rocmPackages.clr.icd
+    rocmPackages.hipcc
+    rocmPackages.clr
+    rocmPackages.rocminfo
+    rocmPackages.rocm-smi
+
+    # ((llama-cpp.overrideAttrs (final: prev: {
+    #   cmakeFlags = (prev.cmakeFlags ++ [ "-DGGML_HIP=ON" ]);
+    # })).override { rocmSupport =  true; })
   ];
+
+  # systemd.tmpfiles.rules = [
+  #   "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
+  #   "L+ /opt/rocm/llvm - - - - ${pkgs.rocmPackages.llvm.llvm}"
+  # ];
 
     
   programs.dconf.enable = true;
@@ -99,5 +115,30 @@
   security.sudo = {
     enable = true;
     execWheelOnly = true;
+  };
+
+  hardware.amdgpu = {
+    opencl.enable = true;
+    amdvlk.enable = true;
+  };
+
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      alsa-lib
+      glib
+      expat
+      xorg.libxcb
+      xorg.libXrandr
+      xorg.libXfixes
+      xorg.libXext
+      pango
+      cairo
+      udev
+      stdenv.cc.cc
+      zlib
+      nspr
+      atk
+    ];
   };
 }
