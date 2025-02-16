@@ -64,7 +64,8 @@
 
   environment.systemPackages = with pkgs; [
     bat
-    blender
+    #blender
+    inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
     darktable
     entr
@@ -80,7 +81,7 @@
     jujutsu
     neovim
     nil
-    openscad
+    openscad-unstable
     orca-slicer
     p7zip
     ripgrep
@@ -90,6 +91,7 @@
     wget
     wl-clipboard
     xh
+    zed-editor
 
     clinfo
     rocmPackages.clr.icd
