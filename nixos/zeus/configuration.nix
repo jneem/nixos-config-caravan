@@ -42,6 +42,7 @@
 
   services.displayManager.cosmic-greeter.enable = true;
   services.desktopManager.cosmic.enable = true;
+  services.fwupd.enable = true;
   services.openssh = {
     enable = true;
     settings.PasswordAuthentication = false;
