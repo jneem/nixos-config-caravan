@@ -9,7 +9,7 @@
   programs.firefox = {
     enable = true;
     profiles.jneeman = {
-      extensions = with pkgs.inputs.firefox-addons; [
+      extensions.packages = with pkgs.inputs.firefox-addons; [
         ublock-origin
         bitwarden
         multi-account-containers
