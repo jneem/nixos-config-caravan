@@ -61,6 +61,28 @@
 
   system.stateVersion = "24.11";
 
+  networking.nat.enable = true;
+  networking.nat.externalInterface = "enP4p65s0";
+  networking.nat.internalInterfaces = [ "wgtest" ];
+  networking.firewall = {
+    allowedUDPPorts = [ 51820 2222 ];
+    allowedTCPPorts = [ 2222 ];
+  };
+  networking.wireguard.interfaces = {
+    wgtest = {
+      ips = [ "192.168.2.1/24" ];
+      listenPort = 51820;
+      # Skipped postSetup and postShutdown
+      privateKeyFile = "/root/wireguard-keys/private";
+      peers = [
+        {
+          publicKey = "rXCmq3hqBvT01nOS2YoNEmzaEe72ER4mqBxyNzmEPAA=";
+          allowedIPs = [ "192.168.2.0/24" ];
+        }
+      ];
+    };
+  };
+
   users.users = {
     root = {
       openssh.authorizedKeys.keys = [

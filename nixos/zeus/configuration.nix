@@ -25,16 +25,16 @@
   ];
 
   time.timeZone="Asia/Bangkok";
-  virtualisation.docker.enable = true;
+  # virtualisation.docker.enable = true;
 
-  # Recent kernel fixed issues with power-off
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_12;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "caravan";
   networking.networkmanager.enable = true;
-  networking.firewall.allowedTCPPorts = [42000 42001];
-  networking.firewall.allowedUDPPorts = [42000 42001];
+  # networking.firewall.allowedTCPPorts = [42000 42001];
+  networking.firewall.allowedUDPPorts = [51871 51872];
+  networking.firewall.checkReversePath = false;
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -90,6 +90,7 @@
     vim
     wally-cli
     wget
+    wireguard-tools
     wl-clipboard
     xh
     zed-editor
@@ -144,4 +145,22 @@
       atk
     ];
   };
+
+  # networking.networkmanager.insertNameservers = ["1.1.1.1"];
+  # networking.wireguard.interfaces = {
+  #   wgtest = {
+  #     ips = [ "192.168.2.2/32" ];
+  #     listenPort = 51872;
+  #     privateKeyFile = "/home/jneeman/wireguard-keys/caravan/private";
+  #     peers = [
+  #       {
+  #         publicKey = "/6mwmfHSwTs90LFH6kMZxcKKf7YEs06oJdRAbhstRz8=";
+  #         allowedIPs = [ "192.168.2.0/24" ];
+  #         #allowedIPs = [ "0.0.0.0/0" ];
+  #         endpoint = "49.13.72.117:51820";
+  #         persistentKeepalive = 25;
+  #       }
+  #     ];
+  #   };
+  # };
 }

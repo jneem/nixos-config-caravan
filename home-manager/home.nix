@@ -71,6 +71,7 @@
       digikam
       eog
       exiftool
+      freecad
       gimp
       inkscape
       krita
