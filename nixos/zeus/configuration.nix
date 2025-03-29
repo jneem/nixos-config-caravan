@@ -2,12 +2,15 @@
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 {
   inputs,
+  outputs,
   pkgs,
   ...
 }: {
   imports = [
     # Modules from modules/nixos
     # outputs.nixosModules.common
+    # outputs.nixosModules.cosmic-with-niri
+    outputs.nixosModules.greetd-niri-autologin
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -16,7 +19,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
-    inputs.nixos-cosmic.nixosModules.default
+    # inputs.nixos-cosmic.nixosModules.default
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
@@ -40,8 +43,8 @@
     nssmdns4 = true;
   };
 
-  services.displayManager.cosmic-greeter.enable = true;
-  services.desktopManager.cosmic.enable = true;
+  # services.displayManager.cosmic-greeter.enable = true;
+  # services.desktopManager.cosmic.enable = true;
   services.fwupd.enable = true;
   services.openssh = {
     enable = true;
@@ -119,6 +122,11 @@
   security.sudo = {
     enable = true;
     execWheelOnly = true;
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
   };
 
   hardware.amdgpu = {

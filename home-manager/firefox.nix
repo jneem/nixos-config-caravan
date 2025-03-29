@@ -25,7 +25,7 @@
       };
 
       search = {
-        default = "DuckDuckGo";
+        default = "ddg";
         force = true;
         engines = {
           "Nix Packages" = {
@@ -40,7 +40,7 @@
             definedAliases = [ "/pkg" ];
           };
 
-          "Google".metaData.alias = "/g";
+          "google".metaData.alias = "/g";
 
           "crates.io" = {
             urls = [{
