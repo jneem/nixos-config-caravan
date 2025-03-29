@@ -27,7 +27,7 @@
   time.timeZone="Asia/Bangkok";
   # virtualisation.docker.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_12;
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "caravan";
