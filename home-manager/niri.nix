@@ -21,6 +21,9 @@ in
   programs.niri = {
     enable = true;
     settings = {
+      environment = {
+        NIXOS_OZONE_WL = "1";
+      };
       spawn-at-startup = [
         #(makeCommand "${outputs.packages.${pkgs.system}.cosmic-ext-alt}/bin/cosmic-ext-alternative-startup")
         #(makeCommand "${pkgs.cosmic-panel}/bin/cosmic-panel")
