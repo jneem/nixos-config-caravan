@@ -35,6 +35,10 @@ in
       input = {
         focus-follows-mouse.enable = true;
         warp-mouse-to-focus = true;
+
+        touchpad = {
+          dwt = true;
+        };
       };
 
       outputs = {

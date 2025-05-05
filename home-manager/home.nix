@@ -69,6 +69,7 @@
     packages = with pkgs; [
       age
       bitwarden-cli
+      candy-icons
       chromium
       digikam
       eog
@@ -82,6 +83,7 @@
       gh
       grim
       mpv
+      nickel
       pari
       pavucontrol
       picocom
@@ -90,14 +92,22 @@
       slack
       steam
       vlc
+      xwayland-satellite
       wally-cli
       wl-clipboard
       zathura
+      zed-editor
     ];
   };
 
   # This is needed for our cursor theme settings to take effect in gtk apps.
-  gtk.enable = true;
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "candy-icons";
+      package = pkgs.candy-icons;
+    };
+  };
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
@@ -230,4 +240,6 @@
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
+
+  xsession.preferStatusNotifierItems = true;
 }

@@ -42,6 +42,7 @@
         checkOnSave = {
           command = "clippy";
         };
+        files.watcher = "server";
       };
     };
   };
