@@ -67,6 +67,7 @@
     };
 
     packages = with pkgs; [
+      adwaita-icon-theme
       age
       bitwarden-cli
       candy-icons
@@ -91,6 +92,8 @@
       slurp
       slack
       steam
+      tinymist
+      typst
       vlc
       xwayland-satellite
       wally-cli
@@ -157,6 +160,7 @@
       user.name = "Joe Neeman";
       user.email = "joe@neeman.me";
       ui.default-command = "log";
+      ui.pager = ":builtin";
     };
   };
   programs.nix-index = {

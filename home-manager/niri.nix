@@ -23,6 +23,10 @@ in
     settings = {
       environment = {
         NIXOS_OZONE_WL = "1";
+        GDK_BACKEND = "wayland";
+        QT_QPA_PLATFORM = "wayland";
+        MOZ_ENABLE_WAYLAND = "wayland";
+        SDL_VIDEODRIVER = "wayland";
       };
       spawn-at-startup = [
         #(makeCommand "${outputs.packages.${pkgs.system}.cosmic-ext-alt}/bin/cosmic-ext-alternative-startup")
