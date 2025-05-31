@@ -69,6 +69,7 @@
     packages = with pkgs; [
       adwaita-icon-theme
       age
+      asciidoctor
       bitwarden-cli
       candy-icons
       chromium
@@ -85,6 +86,7 @@
       grim
       mpv
       nickel
+      nls
       pari
       pavucontrol
       picocom

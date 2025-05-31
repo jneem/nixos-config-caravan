@@ -57,7 +57,7 @@
   system.stateVersion = "23.05";
 
   i18n = {
-    defaultLocale = "en_US.utf8";
+    defaultLocale = "en_US.UTF-8";
     inputMethod = {
       enable = true;
       type = "fcitx5";
@@ -67,6 +67,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    adwaita-icon-theme
     bat
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
@@ -85,7 +86,7 @@
     jujutsu
     neovim
     nil
-    openscad-unstable
+    inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
     orca-slicer
     p7zip
     ripgrep
