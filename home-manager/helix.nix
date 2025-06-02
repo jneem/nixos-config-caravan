@@ -92,7 +92,8 @@ in
       ];
 
       language-server.rust-analyzer.config = {
-        checkOnSave = {
+        checkOnSave = true;
+        check = {
           command = "clippy";
         };
         files.watcher = "server";
