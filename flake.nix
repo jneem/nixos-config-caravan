@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     home-manager.url = "github:nix-community/home-manager/master";
@@ -61,6 +62,12 @@
     # Available through 'nixos-rebuild --flake .#your-hostname'
     nixosConfigurations = {
       caravan = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/caravan/configuration.nix
+        ];
+      };
+      zeus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/zeus/configuration.nix

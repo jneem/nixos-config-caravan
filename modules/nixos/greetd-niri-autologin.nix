@@ -15,6 +15,8 @@ in
     };
   };
 
+  programs.niri.enable = true;
+
   security.pam.services.greetd.enableGnomeKeyring = true;
   security.pam.services.swaylock = {};
   services.blueman.enable = true;

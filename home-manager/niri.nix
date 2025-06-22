@@ -38,25 +38,29 @@ in
 
       input = {
         focus-follows-mouse.enable = true;
-        warp-mouse-to-focus = true;
+        warp-mouse-to-focus.enable = true;
 
         touchpad = {
           dwt = true;
         };
       };
 
+      # TODO: this should be factored into a machine-dependent config
       outputs = {
-        "eDP-1" = {
+        "DP-3" = {
           scale = 1.0;
         };
-        "DP-4" = {
+        "HDMI-A-1" = {
           scale = 1.0;
+          transform.rotation = 270;
         };
       };
 
       cursor = {
         size = 96;
         theme = "Curlossal";
+        hide-after-inactive-ms = 1000;
+        hide-when-typing = true;
       };
 
       layout = {

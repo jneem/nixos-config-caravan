@@ -5,41 +5,60 @@
 
 {
   imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
+    [
+      (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.loader.systemd-boot.enable = true;
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/4471c618-dd01-45cc-9364-35eb7c540796";
-      fsType = "ext4";
-    };
+  # Try a latest kernel, to hopefully resolve video card issues.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  boot.initrd.luks.devices."root".device = "/dev/disk/by-uuid/6e108eda-ca84-4769-98fd-50ce6d34a6eb";
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/37bec5a5-226f-41a0-8acf-ebe36fbf4365";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/B426-45C2";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/3D13-2457";
+    fsType = "vfat";
+  };
+
+  fileSystems."/mnt/alexandria" = {
+    device = "alexandria:/mnt/storage";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "noatime" "soft" ];
+  };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0bbceae5-b823-4563-9fd1-dd1abe341a31"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/3d13883e-2ccf-46dc-b361-76a0e18ef9a3"; }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # hardware.graphics = {
+  #   extraPackages = with pkgs; [
+  #     amdvlk
+  #   ];
+  # };
+
+  environment.variables = {
+    AMD_VULKAN_ICD = lib.mkDefault "RADV";
+  };
+
+  #home-manager.users.jneeman.wayland.windowManager.sway = {
+  #  config.input."1386:183:Wacom_Intuos3_4x6_Pen".map_to_output = "DP-3";
+  #};
 }

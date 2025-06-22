@@ -30,7 +30,7 @@
   time.timeZone="America/Chicago";
   # virtualisation.docker.enable = true;
 
-  #boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_6_14;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "caravan";
@@ -42,9 +42,6 @@
     enable = true;
     nssmdns4 = true;
   };
-
-  services.printing.enable = true;
-  services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
 
   # services.displayManager.cosmic-greeter.enable = true;
   # services.desktopManager.cosmic.enable = true;
@@ -87,7 +84,7 @@
     home-manager
     htop
     jq
-    #jujutsu
+    jujutsu
     neovim
     nil
     inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
@@ -103,12 +100,12 @@
     xh
     zed-editor
 
-    # clinfo
-    # rocmPackages.clr.icd
-    # rocmPackages.hipcc
-    # rocmPackages.clr
-    # rocmPackages.rocminfo
-    # rocmPackages.rocm-smi
+    clinfo
+    rocmPackages.clr.icd
+    rocmPackages.hipcc
+    rocmPackages.clr
+    rocmPackages.rocminfo
+    rocmPackages.rocm-smi
 
     # ((llama-cpp.overrideAttrs (final: prev: {
     #   cmakeFlags = (prev.cmakeFlags ++ [ "-DGGML_HIP=ON" ]);
@@ -135,8 +132,8 @@
   };
 
   hardware.amdgpu = {
-    #opencl.enable = true;
-    #amdvlk.enable = true;
+    opencl.enable = true;
+    amdvlk.enable = true;
   };
 
   programs.nix-ld = {

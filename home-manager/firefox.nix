@@ -15,6 +15,10 @@
         multi-account-containers
       ];
 
+      settings = {
+        "ui.systemUsesDarkTheme" = 1;
+      };
+
       containersForce = true;
       containers = {
         work = {
