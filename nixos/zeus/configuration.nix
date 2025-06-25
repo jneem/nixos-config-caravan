@@ -33,7 +33,7 @@
   #boot.kernelPackages = pkgs.linuxPackages_6_14;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-  networking.hostName = "caravan";
+  networking.hostName = "zeus";
   networking.networkmanager.enable = true;
   # networking.firewall.allowedTCPPorts = [42000 42001];
   networking.firewall.allowedUDPPorts = [51871 51872];
