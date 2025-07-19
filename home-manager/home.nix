@@ -97,6 +97,7 @@
       tinymist
       typst
       vlc
+      xournalpp
       xwayland-satellite
       wally-cli
       wl-clipboard

@@ -43,6 +43,10 @@ in
         touchpad = {
           dwt = true;
         };
+
+        tablet = {
+          map-to-output = "DP-3";
+        };
       };
 
       # TODO: this should be factored into a machine-dependent config
