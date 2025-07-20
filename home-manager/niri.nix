@@ -53,10 +53,12 @@ in
       outputs = {
         "DP-3" = {
           scale = 1.0;
+          position = { x = 0; y = 0; };
+          focus-at-startup = true;
         };
-        "HDMI-A-1" = {
+        "DP-2" = {
           scale = 1.0;
-          transform.rotation = 270;
+          position = { x = 3840; y = 0; };
         };
       };
 

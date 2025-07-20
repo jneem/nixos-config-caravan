@@ -53,6 +53,11 @@
     enable = true;
     settings.PasswordAuthentication = false;
   };
+  services.jellyfin = {
+    enable = true;
+    openFirewall = true;
+    user = "jneeman";
+  };
   programs.sway.enable = true;
   programs.geary.enable = true;
 
@@ -86,6 +91,9 @@
     helix
     home-manager
     htop
+    jellyfin
+    jellyfin-web
+    jellyfin-ffmpeg
     jq
     #jujutsu
     neovim
