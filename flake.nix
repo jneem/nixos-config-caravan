@@ -73,6 +73,12 @@
           ./nixos/zeus/configuration.nix
         ];
       };
+      kawaii = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/kawaii/configuration.nix
+        ];
+      };
       purple = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
