@@ -194,4 +194,20 @@
   #     ];
   #   };
   # };
+
+  systemd.services.configure-webcam = {
+    description = "Set webcam resolution and zoom at boot";
+    wantedBy = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = ''
+        ${pkgs.v4l-utils}/bin/v4l2-ctl \
+          --device=/dev/video0 \
+          --set-fmt-video=width=1280,height=720,pixelformat=YUYV
+        ${pkgs.v4l-utils}/bin/v4l2-ctl \
+          --device=/dev/video0 \
+          --set-ctrl=zoom_absolute=250
+      '';
+    };
+  };
 }
