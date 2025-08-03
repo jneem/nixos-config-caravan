@@ -25,6 +25,8 @@
     ./hardware-configuration.nix
 
     ../common.nix
+
+    ../../users/jneeman.nix
   ];
 
   time.timeZone="America/Chicago";
