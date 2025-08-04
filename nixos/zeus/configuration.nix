@@ -29,6 +29,14 @@
     ../../users/jneeman.nix
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    config = {
+      common.default = "gtk";
+    };
+  };
+
   time.timeZone="America/Chicago";
   # virtualisation.docker.enable = true;
 
@@ -60,7 +68,7 @@
     openFirewall = true;
     user = "jneeman";
   };
-  programs.sway.enable = true;
+  #programs.sway.enable = true;
   programs.geary.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
