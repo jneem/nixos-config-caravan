@@ -82,6 +82,7 @@
     entr
     fd
     file
+    firefox
     fzf
     git
     gitui

@@ -61,6 +61,7 @@
 
   # services.displayManager.cosmic-greeter.enable = true;
   # services.desktopManager.cosmic.enable = true;
+  services.gnome.evolution-data-server.enable = true;
   services.fwupd.enable = true;
   services.openssh = {
     enable = true;
@@ -101,6 +102,7 @@
     fzf
     git
     gitui
+    gnome-contacts
     helix
     home-manager
     htop
