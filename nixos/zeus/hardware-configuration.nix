@@ -17,9 +17,6 @@
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Try a latest kernel, to hopefully resolve video card issues.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/37bec5a5-226f-41a0-8acf-ebe36fbf4365";
     fsType = "ext4";

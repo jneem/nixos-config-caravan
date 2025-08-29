@@ -43,7 +43,8 @@
   time.timeZone="America/Chicago";
   # virtualisation.docker.enable = true;
 
-  #boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "zeus";
@@ -91,7 +92,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
-    linuxPackages_6_14.perf
+    linuxPackages_latest.perf
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
