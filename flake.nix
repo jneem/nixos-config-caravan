@@ -79,6 +79,12 @@
           ./nixos/kawaii/configuration.nix
         ];
       };
+      mercury = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./nixos/mercury/configuration.nix
+        ];
+      };
       purple = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
