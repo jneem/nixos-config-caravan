@@ -4,6 +4,8 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./nas.nix
+      ./grafana.nix
       ../common.nix
       ../../users/jneeman.nix
     ];
@@ -42,6 +44,7 @@
   environment.systemPackages = with pkgs; [
     git
     helix
+    htop
     vim
   ];
 
@@ -53,6 +56,35 @@
   services.avahi.publish.addresses = true;
   services.avahi.publish.workstation = true;
   services.avahi.nssmdns4 = true;
+
+  # TODO: figure out authentication
+  services.victoriametrics = {
+    enable = true;
+    retentionPeriod = "100y";
+
+    prometheusConfig = {
+      scrape_configs = [
+        {
+          job_name = "node-exporter";
+          scrape_interval = "15s";
+          static_configs = [
+            { targets = ["localhost:9100"]; labels.type = "node"; }
+          ];
+        }
+      ];
+    };
+  };
+
+  services.prometheus.exporters.node.enable = true;
+
+  services.victorialogs = {
+    enable = true;
+  };
+
+  services.journald.upload = {
+    enable = true;
+    settings.Upload.URL = "http://localhost:9428/insert/journald";
+  };
 
   system.stateVersion = "24.11";
 
