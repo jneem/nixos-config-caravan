@@ -29,10 +29,21 @@
     ../../users/jneeman.nix
   ];
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    config = {
+      common = {
+        default = "gtk";
+        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+      };
+    };
+  };
+
   time.timeZone="America/Chicago";
   # virtualisation.docker.enable = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_6_14;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "caravan";
@@ -71,7 +82,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
-    linuxPackages_6_14.perf
+    linuxPackages_latest.perf
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
