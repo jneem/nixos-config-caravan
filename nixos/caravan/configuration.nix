@@ -56,6 +56,10 @@
     nssmdns4 = true;
   };
 
+  services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
+
+
   # services.displayManager.cosmic-greeter.enable = true;
   # services.desktopManager.cosmic.enable = true;
   services.fwupd.enable = true;
