@@ -25,7 +25,7 @@ in
         NIXOS_OZONE_WL = "1";
         GDK_BACKEND = "wayland";
         QT_QPA_PLATFORM = "wayland";
-        MOZ_ENABLE_WAYLAND = "wayland";
+        MOZ_ENABLE_WAYLAND = "1";
         SDL_VIDEODRIVER = "wayland";
       };
       spawn-at-startup = [

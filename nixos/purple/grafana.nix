@@ -18,9 +18,9 @@
         };
 
         provision = {
-            dashboards.settings.providers = [
-                { name = "Overview"; options.path = "/etc/grafana-dashboards"; }
-            ];
+            # dashboards.settings.providers = [
+            #     { name = "Overview"; options.path = "/etc/grafana-dashboards"; }
+            # ];
 
             datasources.settings = {
                 apiVersion = 1;
