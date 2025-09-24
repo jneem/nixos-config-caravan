@@ -45,12 +45,6 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
-  # hardware.graphics = {
-  #   extraPackages = with pkgs; [
-  #     amdvlk
-  #   ];
-  # };
-
   environment.variables = {
     AMD_VULKAN_ICD = lib.mkDefault "RADV";
   };

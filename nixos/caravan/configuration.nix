@@ -150,7 +150,6 @@
 
   hardware.amdgpu = {
     opencl.enable = true;
-    amdvlk.enable = true;
   };
 
   programs.nix-ld = {
