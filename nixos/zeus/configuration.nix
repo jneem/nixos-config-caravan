@@ -93,7 +93,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
-    linuxPackages_latest.perf
+    perf
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
