@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
-
+let keys = import ../ssh-keys.nix; in
 {
   imports =
     [
@@ -48,8 +48,10 @@
     vim
   ];
 
-  # TODO: only public key access
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+  };
   services.avahi.enable = true;
   services.avahi.publish.enable = true;
   services.avahi.publish.domain = true;
@@ -90,10 +92,9 @@
 
   users.users = {
     root = {
-      # TODO: put these ssh keys somewhere common
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM3Hjr4Dv+5hKLBzAxO83oiNHA0ZmaG0/LINPVOKs9+4 jneeman@caravan"
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGpAveBRfqrg7a41+qdOxw5WT3CbEi7dwlgKObSM85YP jneeman@zeus"
+        keys.user."jneeman@zeus"
+        keys.user."jneeman@caravan"
       ];
     };
   };

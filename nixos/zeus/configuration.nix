@@ -115,7 +115,7 @@
     #jujutsu
     neovim
     nil
-    inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
+    openscad-unstable
     orca-slicer
     p7zip
     ripgrep

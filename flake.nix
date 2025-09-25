@@ -25,10 +25,14 @@
 
     firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
+
+    agenix.url = "github:ryantm/agenix";
+    agenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
+    agenix,
     nixpkgs,
     home-manager,
     ...
@@ -65,12 +69,14 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/caravan/configuration.nix
+          agenix.nixosModules.default
         ];
       };
       zeus = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/zeus/configuration.nix
+          agenix.nixosModules.default
         ];
       };
       kawaii = nixpkgs.lib.nixosSystem {
@@ -120,5 +126,13 @@
         ];
       };
     };
+
+    devShells = forAllSystems (system: {
+      default = nixpkgs.legacyPackages.${system}.mkShell {
+        nativeBuildInputs = [
+          agenix.packages.${system}.default
+        ];
+      };
+    });
   };
 }
