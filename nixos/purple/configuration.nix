@@ -42,9 +42,12 @@ let keys = import ../ssh-keys.nix; in
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [
+    fd
+    gnupg
     git
     helix
     htop
+    ripgrep
     vim
   ];
 
