@@ -96,6 +96,9 @@ in
         check = {
           command = "clippy";
         };
+        rust = {
+          analyzerTargetDir = true;
+        };
         files.watcher = "server";
       };
     };
