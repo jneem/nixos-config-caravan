@@ -7,6 +7,8 @@
   ...
 }: {
   imports = [
+    inputs.probe-rs-rules.nixosModules.x86_64-linux.default
+
     # Modules from modules/nixos
     # outputs.nixosModules.common
     # outputs.nixosModules.cosmic-with-niri
@@ -162,6 +164,8 @@
   hardware.amdgpu = {
     opencl.enable = true;
   };
+
+  hardware.probe-rs.enable = true;
 
   programs.nix-ld = {
     enable = true;
