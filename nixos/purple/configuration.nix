@@ -7,6 +7,7 @@ let keys = import ../ssh-keys.nix; in
       ./nas.nix
       ./grafana.nix
       ./navidrome.nix
+      ./backup.nix
       ../common.nix
       ../../users/jneeman.nix
     ];

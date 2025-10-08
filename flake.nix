@@ -95,6 +95,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/purple/configuration.nix
+          agenix.nixosModules.default
         ];
       };
     };
