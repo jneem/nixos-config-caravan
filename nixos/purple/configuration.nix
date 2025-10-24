@@ -8,6 +8,7 @@ let keys = import ../ssh-keys.nix; in
       ./grafana.nix
       ./navidrome.nix
       ./backup.nix
+      ./fan.nix
       ../common.nix
       ../../users/jneeman.nix
     ];
@@ -47,6 +48,7 @@ let keys = import ../ssh-keys.nix; in
     fd
     gnupg
     git
+    hdparm
     helix
     htop
     ripgrep
@@ -63,6 +65,11 @@ let keys = import ../ssh-keys.nix; in
   services.avahi.publish.addresses = true;
   services.avahi.publish.workstation = true;
   services.avahi.nssmdns4 = true;
+
+  # Idle the hard disks after 5 minutes
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="block", KERNEL=="sd[a-z]", ATTR{queue/rotational}=="1", RUN+="${pkgs.hdparm}/bin/hdparm -S 60 /dev/%k"
+  '';
 
   # TODO: figure out authentication
   services.victoriametrics = {

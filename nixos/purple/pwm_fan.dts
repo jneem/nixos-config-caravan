@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    compatible = "rockchip,rk3588";
+
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            pwm_fan: pwm-fan {
+                compatible = "pwm-fan";
+                pwms = <&pwm5 0 50000 0>;  /* channel 0, 50 kHz, normal polarity */
+                cooling-min-state = <0>;
+                cooling-max-state = <255>;
+                #cooling-cells = <2>;
+                status = "okay";
+            };
+        };
+    };
+};
