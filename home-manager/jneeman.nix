@@ -124,15 +124,10 @@
     enable = true;
     ignores = [ ".envrc" ".direnv" ];
     lfs.enable = true;
-    userName = "Joe Neeman";
-    userEmail = "joeneeman@gmail.com";
-    includes = [
-      {
-        path = "~/tweag/.gitconfig";
-        condition = "gitdir:~/tweag/";
-      }
-    ];
-    extraConfig = {
+    settings = {
+      user.name = "Joe Neeman";
+      user.email = "joe@neeman.me";
+
       column.ui = "auto";
       branch.sort = "-committerdate";
       tag.sort = "version:refname";
@@ -156,6 +151,12 @@
         all = true;
       };
     };
+    includes = [
+      {
+        path = "~/tweag/.gitconfig";
+        condition = "gitdir:~/tweag/";
+      }
+    ];
   };
   programs.jujutsu = {
     enable = true;

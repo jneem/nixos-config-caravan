@@ -29,6 +29,8 @@
     ../../users/jneeman.nix
   ];
 
+  nix.package = pkgs.lixPackageSets.stable.lix;
+
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
@@ -87,8 +89,7 @@
     adwaita-icon-theme
     bat
     perf
-    #blender
-    inputs.nixpkgs-stable.legacyPackages.${system}.blender
+    blender
     cntr
     darktable
     entr

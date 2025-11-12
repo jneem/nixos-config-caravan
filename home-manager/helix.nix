@@ -31,6 +31,7 @@ in
         end-of-line-diagnostics = "hint";
         file-picker.hidden = false;
         search.smart-case = false;
+        smart-tab.enable = false;
       };
       keys = {
         normal = {
