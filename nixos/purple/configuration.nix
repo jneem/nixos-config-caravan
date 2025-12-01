@@ -16,6 +16,7 @@ let keys = import ../ssh-keys.nix; in
   boot = {
     initrd.systemd.enable = true;
     loader.systemd-boot.enable = true;
+    loader.systemd-boot.configurationLimit = 4;
     kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest;
 
     kernelParams = [
