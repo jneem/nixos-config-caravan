@@ -47,6 +47,7 @@
   # virtualisation.docker.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernel.sysctl."kernel.perf_event_paranoid" = -1;
 
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
@@ -96,6 +97,7 @@
     adwaita-icon-theme
     bat
     perf
+    samply
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
