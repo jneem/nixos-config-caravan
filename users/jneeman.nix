@@ -5,7 +5,7 @@ let keys = import ../nixos/ssh-keys.nix; in
     initialPassword = "correcthorsebatterystaple";
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "docker" "podman" "networkmanager" "wheel" "video" "scanner" "lp" "libvirtd" "dialout" "disk" "audio"];
+    extraGroups = [ "docker" "podman" "networkmanager" "wheel" "video" "scanner" "lp" "libvirtd" "dialout" "disk" "audio" "scanner"];
     openssh.authorizedKeys.keys = [
       keys.user."jneeman@zeus"
       keys.user."jneeman@caravan"

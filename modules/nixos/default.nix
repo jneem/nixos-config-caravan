@@ -5,4 +5,5 @@
   cosmic-with-niri = import ./cosmic-with-niri.nix;
   greetd-niri-autologin = import ./greetd-niri-autologin.nix;
   niepce = import ./niepce.nix;
+  scanner = import ./scanner.nix;
 }

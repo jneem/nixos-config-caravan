@@ -11,6 +11,7 @@
     # outputs.nixosModules.common
     # outputs.nixosModules.cosmic-with-niri
     outputs.nixosModules.greetd-niri-autologin
+    outputs.nixosModules.scanner
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
