@@ -19,7 +19,6 @@ in
   ];
 
   programs.niri = {
-    enable = true;
     settings = {
       environment = {
         NIXOS_OZONE_WL = "1";
@@ -116,7 +115,7 @@ in
     };
   };
 
-  programs.swaylock = {
+  programs.swaylock = pkgs.lib.mkIf config.programs.niri.enable {
     enable = true;
     settings = {
       color = "000000";
@@ -124,7 +123,7 @@ in
     };
   };
 
-  services.swayidle = {
+  services.swayidle = pkgs.lib.mkIf config.programs.niri.enable {
     enable = true;
     events = [
       { event = "before-sleep"; command = "${pkgs.swaylock}/bin/swaylock -f"; }
@@ -134,6 +133,4 @@ in
       { timeout = 601; command = "${pkgs.niri}/bin/niri msg action power-off-monitors"; }
     ];
   };
-
-  services.blueman-applet.enable = true;
 }

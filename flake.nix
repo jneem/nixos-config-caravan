@@ -17,9 +17,6 @@
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
     probe-rs-rules.inputs.nixpkgs.follows = "nixpkgs";
 
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    nixos-cosmic.inputs.nixpkgs.follows = "nixpkgs";
-
     niri.url = "github:sodiboo/niri-flake";
     niri.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -103,6 +100,8 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
+      # TODO: do we need a separate jneeman-with-niri configuration? There's
+      # some niri-specific stuff in here.
       jneeman = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {inherit inputs outputs;};

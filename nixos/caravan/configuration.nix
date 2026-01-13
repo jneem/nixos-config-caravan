@@ -8,9 +8,7 @@
 }: {
   imports = [
     # Modules from modules/nixos
-    # outputs.nixosModules.common
-    # outputs.nixosModules.cosmic-with-niri
-    outputs.nixosModules.greetd-niri-autologin
+    outputs.nixosModules.cosmic
     outputs.nixosModules.scanner
 
     # Or modules from other flakes (such as nixos-hardware):
