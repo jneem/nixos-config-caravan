@@ -105,6 +105,7 @@
     man-pages
     man-pages-posix
     neovim
+    nh
     nil
     inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
     orca-slicer

@@ -112,13 +112,11 @@
     helix
     home-manager
     htop
-    jellyfin
-    jellyfin-web
-    jellyfin-ffmpeg
     jq
     #jujutsu
     neovim
-    nil
+    nh
+    nixd
     openscad-unstable
     orca-slicer
     p7zip
