@@ -56,6 +56,7 @@
     sessionVariables = {
       EDITOR = "hx";
       UV_PYTHON_DOWNLOADS = "never";
+      SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
     };
 
     pointerCursor = {
@@ -90,6 +91,7 @@
       pari
       pavucontrol
       picocom
+      radicle-node
       rclone
       slurp
       slack

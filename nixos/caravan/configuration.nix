@@ -10,6 +10,7 @@
     # Modules from modules/nixos
     outputs.nixosModules.cosmic
     outputs.nixosModules.scanner
+    outputs.nixosModules.radicle
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -22,6 +23,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./radicle.nix
 
     ../common.nix
 
@@ -60,6 +62,9 @@
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
 
+  # Geary enables gnome-keyring, but we don't want it's ssh agent
+  services.gnome.gcr-ssh-agent.enable = false;
+  programs.ssh.startAgent = true;
 
   # services.displayManager.cosmic-greeter.enable = true;
   # services.desktopManager.cosmic.enable = true;
@@ -106,7 +111,7 @@
     man-pages-posix
     neovim
     nh
-    nil
+    nixd
     inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
     orca-slicer
     p7zip

@@ -120,6 +120,7 @@
     openscad-unstable
     orca-slicer
     p7zip
+    radicle-node
     ripgrep
     unzip
     vim

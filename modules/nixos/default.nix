@@ -6,4 +6,5 @@
   greetd-niri-autologin = import ./greetd-niri-autologin.nix;
   niepce = import ./niepce.nix;
   scanner = import ./scanner.nix;
+  radicle = import ./radicle.nix;
 }
