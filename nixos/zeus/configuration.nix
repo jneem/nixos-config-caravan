@@ -12,7 +12,8 @@
     # Modules from modules/nixos
     # outputs.nixosModules.common
     # outputs.nixosModules.cosmic-with-niri
-    outputs.nixosModules.greetd-niri-autologin
+    #outputs.nixosModules.greetd-niri-autologin
+    outputs.nixosModules.cosmic
     outputs.nixosModules.niepce
 
     # Or modules from other flakes (such as nixos-hardware):
@@ -34,13 +35,13 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
-    config = {
-      common = {
-        default = "gtk";
-        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-      };
-    };
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    # config = {
+    #   common = {
+    #     default = "gtk";
+    #     "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+    #   };
+    # };
   };
 
   time.timeZone="America/Chicago";

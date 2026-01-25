@@ -59,6 +59,8 @@
       SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent";
     };
 
+    shell.enableNushellIntegration = true;
+
     pointerCursor = {
       package = pkgs.inputs.curlossal.default;
       name = "Curlossal";
@@ -189,6 +191,10 @@
     shellAbbrs = {
       llw = "ll -snew";
     };
+  };
+
+  programs.nushell = {
+    enable = true;
   };
 
   programs.eza = {
