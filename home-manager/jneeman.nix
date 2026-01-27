@@ -62,6 +62,7 @@
     shell.enableNushellIntegration = true;
 
     pointerCursor = {
+      enable = true;
       package = pkgs.inputs.curlossal.default;
       name = "Curlossal";
       size = 96;
@@ -131,6 +132,7 @@
     settings = {
       user.name = "Joe Neeman";
       user.email = "joe@neeman.me";
+      user.signingkey = "~/.ssh/id_ed25519.pub";
 
       column.ui = "auto";
       branch.sort = "-committerdate";
@@ -154,6 +156,9 @@
         prune = true;
         all = true;
       };
+
+      gpg.format = "ssh";
+      commit.gpgsign = true;
     };
     includes = [
       {

@@ -15,6 +15,7 @@
     #outputs.nixosModules.greetd-niri-autologin
     outputs.nixosModules.cosmic
     outputs.nixosModules.niepce
+    outputs.nixosModules.radicle
 
     # Or modules from other flakes (such as nixos-hardware):
     # inputs.hardware.nixosModules.common-cpu-amd
@@ -27,6 +28,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./radicle.nix
 
     ../common.nix
 
