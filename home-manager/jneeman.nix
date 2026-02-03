@@ -174,9 +174,6 @@
       user.email = "joe@neeman.me";
       ui.default-command = "log";
       ui.pager = ":builtin";
-      git = {
-        fetch = ["origin" "rad"];
-      };
     };
   };
   programs.nix-index = {

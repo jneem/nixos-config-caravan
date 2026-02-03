@@ -116,6 +116,7 @@
     home-manager
     htop
     jq
+    keymapp
     #jujutsu
     neovim
     nh
@@ -127,7 +128,6 @@
     ripgrep
     unzip
     vim
-    wally-cli
     wget
     wireguard-tools
     wl-clipboard
@@ -168,6 +168,8 @@
   hardware.amdgpu = {
     opencl.enable = true;
   };
+
+  hardware.keyboard.zsa.enable = true;
 
   hardware.probe-rs.enable = true;
 
