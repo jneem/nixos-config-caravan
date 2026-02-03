@@ -7,7 +7,7 @@
   config,
   pkgs,
   ...
-}: {
+}: rec {
   # You can import other home-manager modules here
   imports = [
     ./firefox.nix
@@ -174,6 +174,12 @@
       user.email = "joe@neeman.me";
       ui.default-command = "log";
       ui.pager = ":builtin";
+
+      signing = {
+        behavior = "own";
+        backend = "ssh";
+        key = programs.git.settings.user.signingkey;
+      };
     };
   };
   programs.nix-index = {
