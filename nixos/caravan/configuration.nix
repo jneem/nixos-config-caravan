@@ -34,13 +34,13 @@
 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
-    config = {
-      common = {
-        default = "gtk";
-        "org.freedesktop.impl.portal.ScreenCast" = "gnome";
-      };
-    };
+    # extraPortals = [ pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-gnome ];
+    # config = {
+    #   common = {
+    #     default = "gtk";
+    #     "org.freedesktop.impl.portal.ScreenCast" = "gnome";
+    #   };
+    # };
   };
 
   time.timeZone="America/Chicago";
@@ -73,7 +73,7 @@
     enable = true;
     settings.PasswordAuthentication = false;
   };
-  programs.sway.enable = true;
+  # programs.sway.enable = true;
   programs.geary.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
