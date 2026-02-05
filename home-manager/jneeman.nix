@@ -208,6 +208,7 @@
     enable = true;
     settings = {
       show_banner = false;
+      edit_mode = "vi";
     };
     extraConfig = ''
         let fish_completer = {|spans|

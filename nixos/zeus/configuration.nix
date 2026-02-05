@@ -75,11 +75,6 @@
     enable = true;
     settings.PasswordAuthentication = false;
   };
-  services.jellyfin = {
-    enable = true;
-    openFirewall = true;
-    user = "jneeman";
-  };
   #programs.sway.enable = true;
   programs.geary.enable = true;
 
