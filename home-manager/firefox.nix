@@ -8,6 +8,7 @@
 }: {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox;
     profiles.jneeman = {
       extensions.packages = with pkgs.inputs.firefox-addons; [
         ublock-origin
