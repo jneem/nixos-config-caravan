@@ -123,11 +123,11 @@
     ripgrep
     unzip
     vim
+    vulkan-tools
     wget
     wireguard-tools
     wl-clipboard
     xh
-    zed-editor
 
     # clinfo
     # rocmPackages.clr.icd
@@ -158,6 +158,11 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
   hardware.amdgpu = {
