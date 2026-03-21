@@ -67,6 +67,10 @@
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
 
+  # Geary enables gnome-keyring, but we don't want its ssh agent
+  services.gnome.gcr-ssh-agent.enable = false;
+  programs.ssh.startAgent = true;
+
   # services.displayManager.cosmic-greeter.enable = true;
   # services.desktopManager.cosmic.enable = true;
   services.gnome.evolution-data-server.enable = true;

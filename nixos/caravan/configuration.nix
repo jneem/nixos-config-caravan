@@ -62,7 +62,7 @@
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
 
-  # Geary enables gnome-keyring, but we don't want it's ssh agent
+  # Geary enables gnome-keyring, but we don't want its ssh agent
   services.gnome.gcr-ssh-agent.enable = false;
   programs.ssh.startAgent = true;
 
@@ -93,6 +93,7 @@
     adwaita-icon-theme
     bat
     perf
+    samply
     blender
     cntr
     darktable
@@ -116,6 +117,7 @@
     orca-slicer
     p7zip
     ripgrep
+    simple-scan
     unzip
     vim
     wally-cli
@@ -123,14 +125,13 @@
     wireguard-tools
     wl-clipboard
     xh
-    zed-editor
 
-    clinfo
-    rocmPackages.clr.icd
-    rocmPackages.hipcc
-    rocmPackages.clr
-    rocmPackages.rocminfo
-    rocmPackages.rocm-smi
+    # clinfo
+    # rocmPackages.clr.icd
+    # rocmPackages.hipcc
+    # rocmPackages.clr
+    # rocmPackages.rocminfo
+    # rocmPackages.rocm-smi
 
     # ((llama-cpp.overrideAttrs (final: prev: {
     #   cmakeFlags = (prev.cmakeFlags ++ [ "-DGGML_HIP=ON" ]);
@@ -158,6 +159,11 @@
 
   hardware.amdgpu = {
     opencl.enable = true;
+  };
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
   };
 
   programs.nix-ld = {

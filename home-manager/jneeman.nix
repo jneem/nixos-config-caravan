@@ -79,13 +79,13 @@
       candy-icons
       chromium
       digikam
-      eog
       exiftool
       freecad
       gimp
       inkscape
       krita
       factorio
+      loupe
       gdb
       gh
       grim
