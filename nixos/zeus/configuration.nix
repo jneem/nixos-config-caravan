@@ -11,8 +11,6 @@
 
     # Modules from modules/nixos
     # outputs.nixosModules.common
-    # outputs.nixosModules.cosmic-with-niri
-    #outputs.nixosModules.greetd-niri-autologin
     outputs.nixosModules.cosmic
     outputs.nixosModules.niepce
     outputs.nixosModules.radicle

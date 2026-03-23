@@ -14,7 +14,6 @@
     ./helix.nix
     ./fonts.nix
     ./alacritty.nix
-    ./niri.nix
     ./waybar.nix
     ./obex.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
