@@ -98,6 +98,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
+    beyond-all-reason
     perf
     samply
     #blender
@@ -111,6 +112,7 @@
     git
     gitui
     gnome-contacts
+    gthumb
     helix
     home-manager
     htop
