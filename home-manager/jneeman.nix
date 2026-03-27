@@ -76,6 +76,7 @@
       asciidoctor
       bitwarden-cli
       candy-icons
+      cargo
       chromium
       digikam
       exiftool
@@ -91,6 +92,7 @@
       mpv
       nickel
       nls
+      opam
       pari
       pavucontrol
       picocom
@@ -114,6 +116,7 @@
   # This is needed for our cursor theme settings to take effect in gtk apps.
   gtk = {
     enable = true;
+    gtk4.theme = null;
     iconTheme = {
       name = "candy-icons";
       package = pkgs.candy-icons;
@@ -129,6 +132,7 @@
     enable = true;
     ignores = [ ".envrc" ".direnv" ];
     lfs.enable = true;
+    signing.format = "ssh";
     settings = {
       user.name = "Joe Neeman";
       user.email = "joe@neeman.me";
