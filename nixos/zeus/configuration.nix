@@ -129,6 +129,9 @@
     vim
     vulkan-tools
     wget
+
+    lutris
+
     wireguard-tools
     wl-clipboard
     xh
