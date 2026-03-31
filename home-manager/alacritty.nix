@@ -5,22 +5,22 @@
       window.decorations = "none";
       font = {
         normal = {
-          family = "Inconsolata";
+          family = "Lotion";
           style = "Regular";
         };
 
         bold = {
-          family = "Inconsolata";
+          family = "Lotion";
           style = "Bold";
         };
 
         italic = {
-          family = "Inconsolata";
+          family = "Lotion";
           style = "Italic";
         };
 
         bold_italic = {
-          family = "Inconsolata";
+          family = "Lotion";
           style = "Bold Italic";
         };
 

@@ -99,17 +99,13 @@
       radicle-node
       rclone
       slurp
-      slack
       steam
       tinymist
       typst
       vlc
       xournalpp
-      xwayland-satellite
-      wally-cli
       wl-clipboard
       zathura
-      zed-editor
     ];
   };
 
