@@ -98,6 +98,7 @@
     bat
     beyond-all-reason
     perf
+    bubblewrap
     samply
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender

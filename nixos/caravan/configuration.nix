@@ -92,6 +92,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
+    bubblewrap
     perf
     samply
     blender
