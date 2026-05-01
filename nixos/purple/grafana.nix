@@ -15,6 +15,9 @@
             };
             #security.admin_email = systemSettings.extraSettings.email;
             analytics.reporting_enabled = false;
+            # TODO: we don't have anything secret in the database, but
+            # we could be more secure about this anyway...
+            security.secret_key = "SW2YcwTIb9zpOOhoPsMm";
         };
 
         provision = {
