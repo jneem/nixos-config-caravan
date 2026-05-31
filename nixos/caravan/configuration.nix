@@ -43,7 +43,7 @@
     # };
   };
 
-  time.timeZone="America/Chicago";
+  time.timeZone="Europe/London";
   # virtualisation.docker.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
