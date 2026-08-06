@@ -16,4 +16,6 @@ stdenvNoCC.mkDerivation {
   };
 
   nativeBuildInputs = [ installFonts ];
+
+  dontInstallWebfonts = true;
 }

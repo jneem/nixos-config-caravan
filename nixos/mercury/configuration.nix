@@ -4,7 +4,9 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+let keys = import ../../nixos/ssh-keys.nix; in
+{
   imports = [
     # Modules from modules/nixos
 
@@ -30,13 +32,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   users.users.root.openssh.authorizedKeys.keys = [
-    ''ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGpAveBRfqrg7a41+qdOxw5WT3CbEi7dwlgKObSM85YP jneeman@zeus''
+    keys.user."jneeman@zeus"
+    keys.user."jneeman@caravan"
   ];
 
   services.displayManager = {
     gdm = {
       enable = true;
-      wayland = true;
       autoSuspend = false;
     };
     defaultSession = "gnome";
@@ -127,10 +129,10 @@
       alsa-lib
       glib
       expat
-      xorg.libxcb
-      xorg.libXrandr
-      xorg.libXfixes
-      xorg.libXext
+      libxcb
+      libxrandr
+      libxfixes
+      libxext
       pango
       cairo
       udev

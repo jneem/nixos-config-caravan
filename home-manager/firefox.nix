@@ -8,6 +8,7 @@
 }: {
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     package = pkgs.firefox;
     profiles.jneeman = {
       extensions.packages = with pkgs.inputs.firefox-addons; [

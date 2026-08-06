@@ -41,12 +41,12 @@
       # Disable if you don't want unfree packages
       allowUnfree = true;
 
-      packageOverrides = pkgs: {
-        factorio = pkgs.factorio.override {
-          username = "jneem";
-          token = "f23c7049ec63cf6f930b838a0f2f70";
-        };
-      };
+      # packageOverrides = pkgs: {
+      #   factorio = pkgs.factorio.override {
+      #     username = "jneem";
+      #     token = "f23c7049ec63cf6f930b838a0f2f70";
+      #   };
+      # };
     };
   };
 
@@ -84,7 +84,7 @@
       gimp
       inkscape
       krita
-      factorio
+      # factorio
       loupe
       gdb
       gh
