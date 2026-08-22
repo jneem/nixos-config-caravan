@@ -42,7 +42,7 @@ let keys = import ../ssh-keys.nix; in
 
   networking.hostName = "purple";
   networking.networkmanager.enable = true;
-  time.timeZone="America/Chicago";
+  time.timeZone="Europe/London";
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.systemPackages = with pkgs; [

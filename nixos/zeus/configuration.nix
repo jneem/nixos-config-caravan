@@ -44,7 +44,7 @@
     # };
   };
 
-  time.timeZone="America/Chicago";
+  time.timeZone="Europe/London";
   # virtualisation.docker.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -61,6 +61,9 @@
     enable = true;
     nssmdns4 = true;
   };
+
+  services.xserver.xkb.options = "scrolllock:mod3";
+  programs.sway.enable = true;
 
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser pkgs.epson-escpr2 ];
@@ -178,6 +181,7 @@
   };
 
   hardware.keyboard.zsa.enable = true;
+  hardware.keyboard.qmk.enable = true;
 
   hardware.probe-rs.enable = true;
 
