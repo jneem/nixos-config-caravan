@@ -27,7 +27,7 @@
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
     ./radicle.nix
-
+    ./wg.nix
     ../common.nix
 
     ../../users/jneeman.nix
@@ -53,9 +53,17 @@
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
   networking.hostName = "zeus";
+  # networking.useNetworkd = true;
+  # systemd.network = {
+  #   enable = true;
+  #   networks."10-lan" = {
+  #     matchConfig.Name = "lan";
+  #     networkConfig.DHCP = "yes";
+  #   };
+  # };
   networking.networkmanager.enable = true;
   # networking.firewall.allowedTCPPorts = [42000 42001];
-  networking.firewall.allowedUDPPorts = [51871 51872];
+  # networking.firewall.allowedUDPPorts = [51871 51872];
   networking.firewall.checkReversePath = false;
   services.avahi = {
     enable = true;
