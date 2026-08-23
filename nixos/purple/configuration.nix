@@ -9,6 +9,7 @@ let keys = import ../ssh-keys.nix; in
       ./navidrome.nix
       ./backup.nix
       ./fan.nix
+      ./wg.nix
       ../common.nix
       ../../users/jneeman.nix
     ];
@@ -42,6 +43,7 @@ let keys = import ../ssh-keys.nix; in
 
   networking.hostName = "purple";
   networking.networkmanager.enable = true;
+  networking.firewall.checkReversePath = false;
   time.timeZone="Europe/London";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -54,6 +56,7 @@ let keys = import ../ssh-keys.nix; in
     htop
     ripgrep
     vim
+    wireguard-tools
   ];
 
   services.openssh = {

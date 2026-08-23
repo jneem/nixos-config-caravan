@@ -218,11 +218,6 @@
     dockerCompat = true;
     dockerSocket.enable = true;
   };
-  virtualisation.containers = {
-    enable = true;
-    registries.insecure = ["gitlab.contabo.intra:5050"];
-  };
-
   # networking.networkmanager.insertNameservers = ["1.1.1.1"];
   # networking.wireguard.interfaces = {
   #   wgtest = {

@@ -2,7 +2,7 @@
 let wgKeys = import ../wg-keys.nix; in
 {
   age.secrets.wg-key = {
-    file = "${inputs.self.outPath}/nixos/secrets/wg-key-zeus.age";
+    file = "${inputs.self.outPath}/nixos/secrets/wg-key-purple.age";
     mode = "640";
     owner = "systemd-network";
     group = "systemd-network";
@@ -15,7 +15,7 @@ let wgKeys = import ../wg-keys.nix; in
     networks."50-wg0" = {
       matchConfig.Name = "wg0";
       address = [
-        "10.67.67.2/32"
+        "10.67.67.3/32"
       ];
     };
 
