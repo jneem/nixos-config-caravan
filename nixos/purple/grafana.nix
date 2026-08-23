@@ -2,14 +2,20 @@
 { config, pkgs, ... }:
 
 {
-    # TODO: configure users
+    services.caddy = {
+        enable = true;
+        virtualHosts."http://grafana.treeman" = {
+            extraConfig = ''
+                bind 10.67.67.3
+                reverse_proxy http://localhost:2345
+            '';
+        };
+    };
     services.grafana = {
         enable = true;
-        openFirewall = true;
         settings = {
             server = {
-                # TODO: consider putting this behind a proxy
-                http_addr = "0.0.0.0";
+                http_addr = "127.0.0.1";
                 http_port = 2345; # default: 3000
                 enable_gzip = true;
             };

@@ -36,6 +36,7 @@ let wgKeys = import ../wg-keys.nix; in
           PublicKey = wgKeys.router;
           AllowedIPs = [ "10.67.67.0/24" ];
           Endpoint = "192.168.8.1:51820";
+          PersistentKeepalive = 25;
         }
       ];
     };

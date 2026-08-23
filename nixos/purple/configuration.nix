@@ -47,6 +47,8 @@ let keys = import ../ssh-keys.nix; in
   time.timeZone="Europe/London";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  networking.firewall.allowedTCPPorts = [ 80 ];
+
   environment.systemPackages = with pkgs; [
     fd
     gnupg
