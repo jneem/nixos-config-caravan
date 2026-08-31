@@ -10,6 +10,7 @@
 }: rec {
   # You can import other home-manager modules here
   imports = [
+    ./emacs.nix
     ./firefox.nix
     ./helix.nix
     ./fonts.nix
@@ -81,6 +82,7 @@
       digikam
       exiftool
       freecad
+      fstl # mkeeter's stl viewer
       gimp
       inkscape
       krita
@@ -102,6 +104,7 @@
       steam
       tinymist
       typst
+      ty
       vlc
       xournalpp
       wl-clipboard

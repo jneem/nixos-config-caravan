@@ -23,6 +23,7 @@
 
     ../../users/jneeman.nix
     ../../users/bong.nix
+    ../../users/chickpea.nix
   ];
 
   boot.loader.systemd-boot.enable = true;

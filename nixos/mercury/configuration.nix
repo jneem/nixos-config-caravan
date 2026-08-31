@@ -25,6 +25,7 @@ let keys = import ../../nixos/ssh-keys.nix; in
 
     ../../users/jneeman.nix
     ../../users/bong.nix
+    ../../users/chickpea.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
