@@ -15,6 +15,7 @@ pkgs,
       epkgs.meow
       epkgs.nix-mode
       epkgs.nixfmt
+      epkgs.rust-mode
       epkgs.org
     ];
   };

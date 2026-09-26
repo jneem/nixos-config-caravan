@@ -37,7 +37,6 @@
   services.displayManager = {
     gdm = {
       enable = true;
-      wayland = true;
       autoSuspend = false;
     };
     defaultSession = "gnome";
@@ -130,10 +129,10 @@
       alsa-lib
       glib
       expat
-      xorg.libxcb
-      xorg.libXrandr
-      xorg.libXfixes
-      xorg.libXext
+      libxcb
+      libxrandr
+      libxfixes
+      libxext
       pango
       cairo
       udev

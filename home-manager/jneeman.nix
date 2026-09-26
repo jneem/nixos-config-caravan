@@ -87,6 +87,7 @@
       inkscape
       krita
       # factorio
+      libreoffice
       loupe
       gdb
       gh

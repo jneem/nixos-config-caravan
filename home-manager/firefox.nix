@@ -11,6 +11,7 @@
     configPath = "${config.xdg.configHome}/mozilla/firefox";
     package = pkgs.firefox;
     profiles.jneeman = {
+      isDefault = true;
       extensions.packages = with pkgs.inputs.firefox-addons; [
         ublock-origin
         bitwarden
