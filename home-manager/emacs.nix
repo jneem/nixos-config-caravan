@@ -8,15 +8,18 @@ pkgs,
     package = pkgs.emacs31-pgtk;
     extraPackages = epkgs: [
       epkgs.company
-      epkgs.counsel
       epkgs.eglot
       epkgs.haskell-mode
-      epkgs.ivy
+      epkgs.marginalia
       epkgs.meow
+      epkgs.nickel-mode
       epkgs.nix-mode
       epkgs.nixfmt
       epkgs.rust-mode
+      epkgs.orderless
       epkgs.org
+      epkgs.projectile
+      epkgs.vertico
     ];
   };
 }
