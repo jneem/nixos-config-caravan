@@ -91,6 +91,7 @@
     htop
     jq
     #jujutsu
+    libreoffice
     nil
     inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
     orca-slicer
