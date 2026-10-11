@@ -5,6 +5,7 @@
   };
 
   host = {
+    "kawaii" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGUuzGOyr/IzwH6W9+aO3kAiKe/rgM++DY3HnsN/SGra root@kawaii";
     "zeus" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkZYhtUXjBE+UL+g5I5KYBlxUo6lP08lQ8VYijjPfGf root@zeus";
     "caravan" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEltFo1SghaiRccyHAll8UAITW1Dfs0+HlsO+7pOvLSx root@caravan";
     "purple" = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMIUBFOe/RKhoqT2tJ7GhZxJ0ofJ0r6jXHeymox6MOT/ root@purple";

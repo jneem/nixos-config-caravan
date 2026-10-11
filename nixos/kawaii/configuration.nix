@@ -18,6 +18,7 @@
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+    ./wg.nix
 
     ../common.nix
 
@@ -85,25 +86,23 @@
     firefox
     fzf
     git
-    gitui
     helix
     home-manager
     htop
     jq
     #jujutsu
-    neovim
     nil
     inputs.nixpkgs-stable.legacyPackages.${system}.openscad-unstable
     orca-slicer
     p7zip
     ripgrep
+    steam
     unzip
     vim
     wget
     wireguard-tools
     wl-clipboard
     xh
-    zed-editor
   ];
 
   programs.dconf.enable = true;

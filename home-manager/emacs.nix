@@ -9,6 +9,8 @@ pkgs,
     extraPackages = epkgs: [
       epkgs.company
       epkgs.eglot
+      epkgs.flycheck
+      epkgs.flycheck-rust
       epkgs.haskell-mode
       epkgs.marginalia
       epkgs.meow

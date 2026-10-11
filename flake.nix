@@ -77,6 +77,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./nixos/kawaii/configuration.nix
+          agenix.nixosModules.default
         ];
       };
       mercury = nixpkgs.lib.nixosSystem {
