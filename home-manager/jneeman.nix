@@ -41,7 +41,9 @@
     config = {
       # Disable if you don't want unfree packages
       allowUnfree = true;
-
+      permittedInsecurePackages = [
+        "radicle-node-1.10.3"
+      ];
       # packageOverrides = pkgs: {
       #   factorio = pkgs.factorio.override {
       #     username = "jneem";

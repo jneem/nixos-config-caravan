@@ -199,10 +199,10 @@
       alsa-lib
       glib
       expat
-      xorg.libxcb
-      xorg.libXrandr
-      xorg.libXfixes
-      xorg.libXext
+      libxcb
+      libxrandr
+      libxfixes
+      libxext
       pango
       cairo
       udev
