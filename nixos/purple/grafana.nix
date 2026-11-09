@@ -5,8 +5,9 @@
     services.caddy = {
         enable = true;
         virtualHosts."http://grafana.treeman" = {
+            # TODO: make this definitionally the same as the wireguard address
+            listenAddresses = [ "10.67.67.3" ];
             extraConfig = ''
-                bind 10.67.67.3
                 reverse_proxy http://localhost:2345
             '';
         };

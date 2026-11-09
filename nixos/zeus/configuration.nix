@@ -115,6 +115,7 @@
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
     cntr
     darktable
+    dig
     entr
     fd
     file
@@ -129,6 +130,7 @@
     jq
     keymapp
     #jujutsu
+    net-tools
     neovim
     nh
     nixd
@@ -137,6 +139,7 @@
     p7zip
     radicle-node
     ripgrep
+    traceroute
     unzip
     vim
     vulkan-tools

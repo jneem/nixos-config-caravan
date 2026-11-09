@@ -19,6 +19,7 @@
       ];
 
       settings = {
+        "browser.startup.homepage" = "about:blank";
         "ui.systemUsesDarkTheme" = 1;
       };
 

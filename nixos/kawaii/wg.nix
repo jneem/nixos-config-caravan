@@ -15,7 +15,7 @@ let wgKeys = import ../wg-keys.nix; in
     networks."50-wg0" = {
       matchConfig.Name = "wg0";
       address = [
-        "10.67.67.3/32"
+        "10.67.67.4/32"
       ];
     };
 
