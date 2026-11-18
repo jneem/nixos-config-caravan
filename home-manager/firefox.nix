@@ -20,6 +20,7 @@
 
       settings = {
         "browser.startup.homepage" = "about:blank";
+        "browser.newtabpage.enabled" = false;
         "ui.systemUsesDarkTheme" = 1;
       };
 
