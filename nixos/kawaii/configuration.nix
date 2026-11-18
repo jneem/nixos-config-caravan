@@ -78,6 +78,7 @@
     bat
     #blender
     inputs.nixpkgs-stable.legacyPackages.${system}.blender
+chromium
     cntr
     #darktable
     entr

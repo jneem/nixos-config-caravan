@@ -86,6 +86,7 @@
       freecad
       fstl # mkeeter's stl viewer
       gimp
+      halloy
       inkscape
       krita
       # factorio
